@@ -1,4 +1,6 @@
-﻿namespace Console_Blank_6
+﻿using System.Diagnostics;
+
+namespace Console_Blank_6
 {
     internal class Program
     {
@@ -37,7 +39,7 @@
             Console.WriteLine("Array after sorting: " + string.Join(", ",intArrayToBeSorted));
             BubbleSort(intArrayToBeSearched);
             Console.WriteLine("Array getting searched: " + string.Join(", ", intArrayToBeSearched));
-            Console.WriteLine("The number is at index " + SearchArrayForInt(intArrayToBeSearched, 7));
+            Console.WriteLine("The number is at index " + SearchArrayForInt(intArrayToBeSearched, 12));
         }
         static void PrintElements(string[] strings)
         {
@@ -115,6 +117,7 @@
             int arrayStartIndex = 0;
             int arrayEndIndex = arrayToBeSearched.Length;
             float lengthBeingUsedToFindThePowerOfTwo = arrayToBeSearched.Length;
+
             while (lengthBeingUsedToFindThePowerOfTwo > 1)
             {
                 lengthBeingUsedToFindThePowerOfTwo /= 2;
@@ -123,12 +126,12 @@
             for (int i = 0; i <= numTimesToSplit; i++)
             {
                 index = (arrayStartIndex + arrayEndIndex) / 2;
-                if (index == num)
+                if (arrayToBeSearched[index] == num)
                 {
                     numFound = true;
                     break;
                 }
-                else if (num < index)
+                else if (num < arrayToBeSearched[index])
                 {
                     arrayEndIndex = index;
                 }
